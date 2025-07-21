@@ -9,7 +9,7 @@ This is a PyTorch implementation of the superpixel segmentation network introduc
 During test, we make use of the component connection method in [SSN](https://github.com/NVlabs/ssn_superpixels) to enforce the connectivity 
 in superpixels. The code has been included in ```/third_paty/cython```. To compile it:
 
- ```console
+ ```
 cd third_party/cython/
 python setup.py install --user
 cd ../..
@@ -22,7 +22,7 @@ cd ../..
 To generate training and test dataset, please first download the data from the original [BSDS500 dataset](http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/BSR/BSR_full.tgz), 
 and extract it to  ```<BSDS_DIR>```. Then, run 
 
-```console
+```
 cd data_preprocessing
 python pre_process_bsd500.py --dataset=<BSDS_DIR> --dump_root=<DUMP_DIR>
 python pre_process_bsd500_ori_sz.py --dataset=<BSDS_DIR> --dump_root=<DUMP_DIR>
@@ -62,7 +62,7 @@ A detailed  [instruction](https://github.com/davidstutz/superpixel-benchmark/blo
 (2) edit the variables ```$SUPERPIXELS```, ```IMG_PATH``` , ```GT_PATH``` and ```SEG_PATH``` (output path) in ```/eval_spixel/my_eval.sh```,
 example:
 
-```console
+```
 SUPERPIXELS=("96" "216" "384" "600" "864" "1176" "1536" "1944")  
 #img and seg and gt's names must be same
 IMG_PATH=/home/BSR/dump_path/test
@@ -80,7 +80,7 @@ done
 
 (3)run 
 
-```console
+```
 cp /eval_spixel/my_eval.sh <path/to/the/benchmark>/examples/bash/
 cd  <path/to/the/benchmark>/examples/
 bash my_eval.sh
@@ -90,7 +90,7 @@ bash my_eval.sh
 
 example:
 
-```console
+```
 our1l_res_path ='/home/ELGANet/output/Ours/test_multiscale_enforce_connect/ELGANet_nSpixel_'
 n_set = length(num_list);
 Ours = zeros(n_set,5);
@@ -108,7 +108,7 @@ end
 
 Specify the image path and use the pre-trained model to generate superpixels for images. 
 
-```console
+```
 python run_demo.py --data_dir=PATH_TO_IMAGE_DIR --output=./demo 
 ```
 
